@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "jenkins_agent" }
+    agent { label "vm-agent" }
     tools {
       maven '3.8.6' 
     }
@@ -9,7 +9,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Test1') {
+        stage('Test') {
             steps {
                 sh 'mvn test'
             }
